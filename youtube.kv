@@ -1,0 +1,192 @@
+<FlatButton@ButtonBehavior+Label>:
+<Main>:
+
+    name: "genel"
+    orientation: "vertical"
+    canvas.before:
+        Color:
+            rgba: 1,1,1,1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    
+    Label:
+        text: "Program Name"
+        size_hint_y:None
+        height: 40
+        canvas.before:
+            Color:
+                rgba: (.06 , 0.45 , 0.45 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        
+    BoxLayout:
+        name: "ana"
+        orientation: "vertical"
+        Label:
+            size_hint_y:None
+            height: 40
+        BoxLayout:
+            name: "linkk"
+            size_hint_y: None
+            height: 80
+            padding:20
+            TextInput:
+                id: link
+                hint_text: "www.youtube.com"
+                size_hint_x: .8
+                multiline: False
+            Button:
+                # background_down: 'adsız.jpg'
+                text: ">"
+                size_hint_x: .2
+                on_release: root.resim_bul()
+        # Label:
+        #     size_hint_y:None
+        #     height: 30
+        BoxLayout:
+            name: "skills"
+            size_hint_y: None
+            size_hint_y: .3
+            spacing:10
+            padding:10
+            BoxLayout:
+                name: "format"
+                orientation: "vertical"
+                size_hint_x: None
+                size_hint_x: .1
+                spacing:7
+                padding:10
+                Label:
+                    markup: True
+                    size_hint_y:None
+                    height: 30
+                    text: "[color=#ffffff]Format[/color]"
+                    canvas.before:
+                        Color:
+                            rgba: (0.06 , 0.45 , 0.45 , 1)
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos                     
+                AnchorLayout:
+                    ToggleButton:
+                        id: mp3
+                        on_state: root.mp3_dis()
+                        group: 'format'
+                        text: "MP3"
+                        background_color: (0.06 , 0.45 , 0.45 , 1)
+                        background_normal: ''
+                        size_hint_x: None
+                AnchorLayout:
+                    ToggleButton:
+                        id: mp4
+                        on_state: root.mp4_dis()
+                        group: 'format'
+                        text: "MP4"
+                        background_color: (0.06 , 0.45 , 0.45 , 1)
+                        background_normal: ''
+                        size_hint_x: None
+            BoxLayout:
+                name: "kalite"
+                orientation: "vertical"
+                size_hint_x: None
+                size_hint_x: .2
+                spacing:2
+                AnchorLayout:    
+                    Label:
+                        size_hint: None , None
+                        size_hint_x: .7
+                        height: 30
+                        canvas.before:
+                            Color:
+                                rgba: (0.06 , 0.45 , 0.45 , 1)
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        text: "[color=ffffff]Kalite[/color]"
+                        markup: True
+                Label:
+                    size_hint_y: None
+                    height:10
+                AnchorLayout:
+                    ToggleButton:
+                        id: button_360
+                        text: "360p"
+                        background_color: (0.06 , 0.45 , 0.45 , 1)
+                        background_normal: ''
+                        group: 'kalite'
+                        size_hint_x: None
+                        size_hint_x: .6
+                AnchorLayout:
+                    ToggleButton:
+                        id: button_480
+                        text: "480p"
+                        background_color: (0.06 , 0.45 , 0.45 , 1)
+                        background_normal: ''
+                        group: 'kalite'
+                        size_hint_x: None
+                        size_hint_x: .6
+                AnchorLayout:
+                    ToggleButton:
+                        id: button_720
+                        text: "720p"
+                        background_color: (0.06 , 0.45 , 0.45 , 1)
+                        background_normal: ''
+                        group: 'kalite'
+                        size_hint_x: None
+                        size_hint_x: .6
+                AnchorLayout:
+                    ToggleButton:
+                        id: button_1080
+                        text: "1080p"
+                        background_color: (0.06 , 0.45 , 0.45 , 1)
+                        background_normal: ''
+                        group: 'kalite'
+                        size_hint_x: None
+                        size_hint_x: .6
+            BoxLayout:
+                name: "dowload_button"
+                size_hint_x: None
+                size_hint_x: .2
+                padding:20
+                orientation: "vertical"
+                Label:
+                    id: dowload_text
+                    size_hint_y:None
+                    height: 30
+                    markup: True
+                Button:
+                    id: download_button
+                    text: "DOWNLOAD"
+                    background_color: (0.06 , 0.45 , 0.45 , 1)
+                    background_normal: ''
+                    on_press: root.secili_button_kontrol()
+        Label:
+            size_hint_y:None
+            height: 40
+        BoxLayout:
+            name: "photo"
+            size_hint_y: None
+            size_hint_y: .5
+            padding: 5
+            spacing:10
+            Button:
+                id: image
+                background_normal: ''
+                on_release:root.connect_youtube()
+            Label:
+                id: info
+                markup:True
+                bold:True
+    Label:
+        text: "TubeBoy"
+        size_hint_y: None
+        height: 20
+        canvas.before:
+            Color:
+                rgba: (.06 , 0.45 , 0.45 , 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        
